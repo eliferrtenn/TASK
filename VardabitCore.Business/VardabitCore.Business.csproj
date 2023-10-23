@@ -1,0 +1,55 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Constants\" />
+    <None Remove="Extensions\" />
+    <None Remove="Interfaces\" />
+    <None Remove="Models\" />
+    <None Remove="Models\Requests\" />
+    <None Remove="Models\Responses\" />
+    <None Remove="Models\Requests\AccountRequests\" />
+    <None Remove="Models\Responses\AccountResponses\" />
+    <None Remove="Services\" />
+    <None Remove="Models\Requests\MarkaRequests\" />
+    <None Remove="Models\Responses\MarkaResponses\" />
+    <None Remove="Models\Requests\ModelRequests\" />
+    <None Remove="Models\Responses\ModelResponses\" />
+    <None Remove="Models\Requests\SiparisRequests\" />
+    <None Remove="Models\Responses\SiparisResponses\" />
+    <None Remove="Models\Requests\VersiyonRequests\" />
+    <None Remove="Models\Responses\VersiyonResponses\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Constants\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="Interfaces\" />
+    <Folder Include="Models\" />
+    <Folder Include="Models\Requests\" />
+    <Folder Include="Models\Responses\" />
+    <Folder Include="Models\Requests\AccountRequests\" />
+    <Folder Include="Models\Responses\AccountResponses\" />
+    <Folder Include="Services\" />
+    <Folder Include="Models\Requests\MarkaRequests\" />
+    <Folder Include="Models\Responses\MarkaResponses\" />
+    <Folder Include="Models\Requests\ModelRequests\" />
+    <Folder Include="Models\Responses\ModelResponses\" />
+    <Folder Include="Models\Requests\SiparisRequests\" />
+    <Folder Include="Models\Responses\SiparisResponses\" />
+    <Folder Include="Models\Requests\VersiyonRequests\" />
+    <Folder Include="Models\Responses\VersiyonResponses\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Localization" Version="7.0.12" />
+    <PackageReference Include="FluentValidation" Version="11.8.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VardabitCore.Data\VardabitCore.Data.csproj" />
+    <ProjectReference Include="..\VardabitCore.Resources\VardabitCore.Resources.csproj" />
+  </ItemGroup>
+</Project>
