@@ -3,6 +3,6 @@
 	public class AddModelRequest
 	{
            public string ModelAd { get; set; }
-          public long MarkaID { get; set; }
+           public long MarkaID { get; set; }
          }
 }
