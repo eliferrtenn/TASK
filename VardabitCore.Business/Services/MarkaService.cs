@@ -86,7 +86,7 @@ namespace VardabitCore.Business.Services
         {
             var result = new ServiceResult<GetMarkaResponse>();
             var marka = await(from technic in _context.Marka
-                                 where technic.ID == markaID
+                                 where technic.ID == markaID && technic.isDeleted == false
                                  select new GetMarkaResponse
                                  {
                                      ID = technic.ID,
