@@ -122,7 +122,7 @@ namespace VardabitCore.Business.Services
         {
             var result = new ServiceResult<GetSiparisResponse>();
             var siparis = await (from technic in _context.Siparis
-                               where technic.ID == versiyonID
+                               where technic.ID == versiyonID && technic.isDeleted == false
                                select new GetSiparisResponse
                                {
                                    ID = technic.ID,
