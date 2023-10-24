@@ -94,7 +94,7 @@ namespace VardabitCore.Business.Services
         {
             var result = new ServiceResult<GetVersiyonResponse>();
             var versiyon = await (from technic in _context.Versiyon
-                               where technic.ID == versiyonID technic.isDeleted == false
+                               where technic.ID == versiyonID && technic.isDeleted == false
                                select new GetVersiyonResponse
                                {
                                    ID = technic.ID,
