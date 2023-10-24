@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -75,7 +75,6 @@ namespace VardabitCore.Business.Services
                                  where technic.isDeleted == false && technic.isActive==true 
                                  select new ListMarkaResponses
                                  {
-                                     ID = technic.ID,
                                      MarkaAd = technic.MarkaAd,
                                  }).ToListAsync();
             result.Data = marka;
@@ -89,7 +88,6 @@ namespace VardabitCore.Business.Services
                                  where technic.ID == markaID && technic.isDeleted == false
                                  select new GetMarkaResponse
                                  {
-                                     ID = technic.ID,
                                      MarkaAd = technic.MarkaAd,
                                  }).FirstOrDefaultAsync();
             if (marka == null)
@@ -102,4 +100,3 @@ namespace VardabitCore.Business.Services
         }
     }
 }
-
