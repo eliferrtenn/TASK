@@ -23,7 +23,6 @@ namespace VardabitCore.Business.Services
         {
             var result = new ServiceResult();
             var versiyon = new Versiyon();
-            versiyon.ID = request.ID;
             versiyon.DepolamaKapasitesi = request.DepolamaKapasitesi;
             versiyon.Fiyat = request.Fiyat;
             versiyon.StokDurumu = request.StokDurumu;
