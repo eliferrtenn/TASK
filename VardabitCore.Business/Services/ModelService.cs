@@ -89,7 +89,7 @@ namespace VardabitCore.Business.Services
         {
             var result = new ServiceResult<GetModelResponse>();
             var model = await(from technic in _context.Model
-                              where technic.ID == modelID
+                              where technic.ID == modelID && technic.isDeleted == false
                               select new GetModelResponse
                               {
                                   ID = technic.ID,
