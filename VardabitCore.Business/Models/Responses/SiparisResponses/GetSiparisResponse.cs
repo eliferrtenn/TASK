@@ -8,6 +8,6 @@ namespace VardabitCore.Business.Models.Responses.SiparisResponses
         public float ToplamFiyat { get; set; }
         public int SiparisDurum { get; set; }
         public int SiparisKalem { get; set; }
-        public long MusteriID { get; set; }
+        public string MusteriAd { get; set; }
     }
 }
