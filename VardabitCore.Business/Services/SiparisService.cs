@@ -23,7 +23,6 @@ namespace VardabitCore.Business.Services
         {
             var result = new ServiceResult();
             var siparis = new Siparis();
-            siparis.ID = request.ID;
             siparis.SiparisTarih = request.SiparisTarih;
             siparis.ToplamFiyat = request.ToplamFiyat;
             siparis.SiparisTarih = request.SiparisTarih;
