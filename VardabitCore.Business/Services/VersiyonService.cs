@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -77,13 +77,15 @@ namespace VardabitCore.Business.Services
                 return result;
             }
             var versiyon = await (from technic in _context.Versiyon
-                               where technic.isDeleted == false && technic.isActive == true && technic.ModelID == modelID
-                               select new ListVersiyonResponse
+                                  join model in _context.Model on technic.ModelID equals model.ID
+                                  where technic.isDeleted == false && technic.isActive == true && technic.ModelID == modelID
+                                   select new ListVersiyonResponse
                                {
                                    ID = technic.ID,
                                    DepolamaKapasitesi=technic.DepolamaKapasitesi,
                                    Fiyat=technic.Fiyat,
-                                   StokDurumu=technic.StokDurumu
+                                   StokDurumu=technic.StokDurumu,
+                                   ModelAd = model.ModelAd ,
                                }).ToListAsync();
 
             result.Data = versiyon;
@@ -94,7 +96,7 @@ namespace VardabitCore.Business.Services
         {
             var result = new ServiceResult<GetVersiyonResponse>();
             var versiyon = await (from technic in _context.Versiyon
-                               where technic.ID == versiyonID && technic.isDeleted == false
+                               where technic.ID == versiyonID
                                select new GetVersiyonResponse
                                {
                                    ID = technic.ID,
@@ -112,4 +114,3 @@ namespace VardabitCore.Business.Services
         }
     }
 }
-
