@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -81,15 +81,16 @@ namespace VardabitCore.Business.Services
                 return result;
             }
             var siparis = await (from technic in _context.Siparis
-                               where technic.isDeleted == false && technic.isActive == true
-                               select new ListSiparisResponse
-                               {
-                                   ID = technic.ID,
-                                   SiparisTarih = technic.SiparisTarih,
-                                   SiparisKalem = technic.SiparisKalem,
-                                   SiparisDurum = technic.SiparisDurum,
-                                   ToplamFiyat = technic.ToplamFiyat,
-                               }).ToListAsync();
+                                 join musteri in _context.Musteri on technic.MusteriID equals musteri.ID
+                                 where technic.isDeleted == false && technic.isActive == true
+                                 select new ListSiparisResponse
+                                 {
+                                     SiparisTarih = technic.SiparisTarih,
+                                     SiparisKalem = technic.SiparisKalem,
+                                     SiparisDurum = technic.SiparisDurum,
+                                     ToplamFiyat = technic.ToplamFiyat,
+                                     MusteriAd = musteri.FirstName,
+                                 }).ToListAsync();
 
             result.Data = siparis;
             return result;
@@ -104,15 +105,16 @@ namespace VardabitCore.Business.Services
                 return result;
             }
             var siparis = await (from technic in _context.Siparis
-                               where technic.isDeleted == false && technic.isActive == true && technic.MusteriID==musteriID
-                               select new ListSiparisResponse
-                               {
-                                   ID = technic.ID,
-                                   SiparisTarih = technic.SiparisTarih,
-                                   SiparisKalem = technic.SiparisKalem,
-                                   SiparisDurum = technic.SiparisDurum,
-                                   ToplamFiyat = technic.ToplamFiyat,
-                               }).ToListAsync();
+                                 join musteri in _context.Musteri on technic.MusteriID equals musteri.ID
+                                 where technic.isDeleted == false && technic.isActive == true && technic.MusteriID == musteriID
+                                 select new ListSiparisResponse
+                                 {
+                                     SiparisTarih = technic.SiparisTarih,
+                                     SiparisKalem = technic.SiparisKalem,
+                                     SiparisDurum = technic.SiparisDurum,
+                                     ToplamFiyat = technic.ToplamFiyat,
+                                     MusteriAd = musteri.FirstName,
+                                 }).ToListAsync();
 
             result.Data = siparis;
             return result;
@@ -122,15 +124,16 @@ namespace VardabitCore.Business.Services
         {
             var result = new ServiceResult<GetSiparisResponse>();
             var siparis = await (from technic in _context.Siparis
-                               where technic.ID == versiyonID && technic.isDeleted == false
-                               select new GetSiparisResponse
-                               {
-                                   ID = technic.ID,
-                                   SiparisTarih = technic.SiparisTarih,
-                                   SiparisKalem = technic.SiparisKalem,
-                                   SiparisDurum = technic.SiparisDurum,
-                                   ToplamFiyat = technic.ToplamFiyat,
-                               }).FirstOrDefaultAsync();
+                                 join musteri in _context.Musteri on technic.MusteriID equals musteri.ID
+                                 where technic.ID == versiyonID && technic.isDeleted == false
+                                 select new GetSiparisResponse
+                                 {
+                                     SiparisTarih = technic.SiparisTarih,
+                                     SiparisKalem = technic.SiparisKalem,
+                                     SiparisDurum = technic.SiparisDurum,
+                                     ToplamFiyat = technic.ToplamFiyat,
+                                     MusteriAd = musteri.FirstName,
+                                 }).FirstOrDefaultAsync();
             if (siparis == null)
             {
                 result.SetError(_localizer["RecordNotFound"]);
