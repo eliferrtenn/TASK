@@ -96,13 +96,15 @@ namespace VardabitCore.Business.Services
         {
             var result = new ServiceResult<GetVersiyonResponse>();
             var versiyon = await (from technic in _context.Versiyon
+                                join model in _context.Model on technic.ModelID equals model.ID
                                where technic.ID == versiyonID
                                select new GetVersiyonResponse
                                {
                                    ID = technic.ID,
                                    DepolamaKapasitesi = technic.DepolamaKapasitesi,
                                    Fiyat = technic.Fiyat,
-                                   StokDurumu = technic.StokDurumu
+                                   StokDurumu = technic.StokDurumu,
+                                   ModelAd = model.ModelAd,
                                }).FirstOrDefaultAsync();
             if (versiyon == null)
             {
