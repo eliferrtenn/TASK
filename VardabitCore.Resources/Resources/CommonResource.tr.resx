@@ -258,34 +258,10 @@
   <data name="StartDate" xml:space="preserve">
     <value>Başlangıç Tarihi</value>
   </data>
-  <data name="PhotoUrl" xml:space="preserve">
-    <value>Fotoğraf</value>
-  </data>
   <data name="Title" xml:space="preserve">
     <value>Başlık</value>
   </data>
   
-  <data name="IntroNotFound" xml:space="preserve">
-    <value>Aradığınız tanıtım bulunamadı.</value>
-  </data>
-  <data name="IntroUpdated" xml:space="preserve">
-    <value>Tanıtım başarıyla güncellendi.</value>
-  </data>
-  <data name="VideoAdded" xml:space="preserve">
-    <value>Video başarıyla eklendi.</value>
-  </data>
-  <data name="VideoDeleted" xml:space="preserve">
-    <value>Video başarıyla silindi.</value>
-  </data>
-  <data name="VideoNotFound" xml:space="preserve">
-    <value>Video bulunamadı.</value>
-  </data>
-  <data name="VideoUpdated" xml:space="preserve">
-    <value>Video başarıyla güncellendi.</value>
-  </data>
-  <data name="VideoWithNameAlreadyExist" xml:space="preserve">
-    <value>Bu başlıkta video zaten kayıtlıdır.</value>
-  </data>
   <data name="ForgotPassword" xml:space="preserve">
     <value>Şifremi Unuttum</value>
   </data>
@@ -318,71 +294,5 @@
   </data>
   <data name="Edit" xml:space="preserve">
     <value>Düzenle</value>
-  </data>
-  <data name="HistoryTitle" xml:space="preserve">
-    <value>Tarihçe</value>
-  </data>
-  <data name="HumanResourceTitle" xml:space="preserve">
-    <value>İnsan Kaynakları</value>
-  </data>
-  <data name="IntroTitle" xml:space="preserve">
-    <value>Biz Kimiz?</value>
-  </data>
-  <data name="SustainabilityTitle" xml:space="preserve">
-    <value>Sürdürülebilirlik</value>
-  </data>
-  <data name="CommercialAreaCount" xml:space="preserve">
-    <value>Ticari Alan </value>
-  </data>
-  <data name="YearCount" xml:space="preserve">
-    <value>Kaçıncı yıl</value>
-  </data>
-  <data name="TechnicalServiceDemandtNotFound" xml:space="preserve">
-    <value>Teknik servis isteği bulunamadı.</value>
-  </data>
-  <data name="TechnicalServiceDemandSendPersonel" xml:space="preserve">
-    <value>Teknik servis personeline başarılı bir mesaj gitmiştir.</value>
-  </data>
-  <data name="UserUpdated" xml:space="preserve">
-    <value>Kullanıcı başarıyla güncellendi.</value>
-  </data>
-  <data name="BlogTitle" xml:space="preserve">
-    <value>Blog</value>
-  </data>
-  <data name="Date" xml:space="preserve">
-    <value>Tarih</value>
-  </data>
-  <data name="Photos" xml:space="preserve">
-    <value>Fotoğraflar</value>
-  </data>
-  <data name="UploadPhotos" xml:space="preserve">
-    <value>Fotoğrafları Yükleyin.</value>
-  </data>
-  <data name="PhotoCouldNotUploaded" xml:space="preserve">
-    <value>Fotoğraf yüklenemedi.</value>
-  </data>
-  <data name="StatusID" xml:space="preserve">
-    <value>Durumu</value>
-  </data>
-  <data name="ProjectPhotosDescription" xml:space="preserve">
-    <value>PROJE FOTOĞRAFLARINI YÜKLEYİN.</value>
-  </data>
-  <data name="TechnicalServiceDemandTitle" xml:space="preserve">
-    <value>Teknik Servis İstek</value>
-  </data>
-  <data name="ApartmentFloor" xml:space="preserve">
-    <value>Bulunduğu Kat</value>
-  </data>
-  <data name="ApartmentName" xml:space="preserve">
-    <value>Apartman Adı/No</value>
-  </data>
-  <data name="ContactInform" xml:space="preserve">
-    <value>İletişim Bilgileri</value>
-  </data>
-  <data name="SiteName" xml:space="preserve">
-    <value>Site  Adı</value>
-  </data>
-  <data name="ThumbUrls" xml:space="preserve">
-    <value>Kapak Fotoğrafı</value>
   </data>
 </root>
