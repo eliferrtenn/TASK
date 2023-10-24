@@ -81,7 +81,6 @@ namespace VardabitCore.Business.Services
                                   where technic.isDeleted == false && technic.isActive == true && technic.ModelID == modelID
                                    select new ListVersiyonResponse
                                {
-                                   ID = technic.ID,
                                    DepolamaKapasitesi=technic.DepolamaKapasitesi,
                                    Fiyat=technic.Fiyat,
                                    StokDurumu=technic.StokDurumu,
@@ -100,7 +99,6 @@ namespace VardabitCore.Business.Services
                                where technic.ID == versiyonID
                                select new GetVersiyonResponse
                                {
-                                   ID = technic.ID,
                                    DepolamaKapasitesi = technic.DepolamaKapasitesi,
                                    Fiyat = technic.Fiyat,
                                    StokDurumu = technic.StokDurumu,
