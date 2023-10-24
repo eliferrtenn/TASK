@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -74,11 +74,12 @@ namespace VardabitCore.Business.Services
                 return result;
             }
             var model = await(from technic in _context.Model
+                              join marka in _context.Marka on technic.MarkaID equals marka.ID
                               where technic.isDeleted == false && technic.isActive == true && technic.MarkaID==markaID
                               select new ListModelResponses
                               {
-                                  ID = technic.ID,
                                   ModelAd = technic.ModelAd,
+                                  MarkaAd = marka.MarkaAd,
                               }).ToListAsync();
 
             result.Data = model;
@@ -89,11 +90,12 @@ namespace VardabitCore.Business.Services
         {
             var result = new ServiceResult<GetModelResponse>();
             var model = await(from technic in _context.Model
-                              where technic.ID == modelID && technic.isDeleted == false
+                              join marka in _context.Marka on technic.MarkaID equals marka.ID
+                              where technic.ID == modelID
                               select new GetModelResponse
                               {
-                                  ID = technic.ID,
                                   ModelAd = technic.ModelAd,
+                                  MarkaAd = marka.MarkaAd,
                               }).FirstOrDefaultAsync();
             if (model == null)
             {
